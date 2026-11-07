@@ -1,30 +1,20 @@
-name: Post Kakashka
+import os
+import random
+import re
+import time
+import requests
 
-on:
-  schedule:
-    # Запуск каждый час (в 0 минут). 
-    # ВАЖНО: GitHub может задерживать запуск на 10-30 минут.
-    - cron: '0 * * * *' 
-  workflow_dispatch: # Позволяет запускать бота вручную кнопкой "Run workflow"
+BOT_TOKEN = os.environ["BOT_TOKEN"]
+CHANNEL_ID = os.environ["CHANNEL_ID"]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+def get_random_butterfly():
+    # ... (тут весь код функции) ...
+    pass # (вставьте полный код, я сократил для примера)
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+def main():
+    for i in range(5):
+        # ... (тут код отправки) ...
+        pass
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run bot
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
-        run: python bot.py
+if __name__ == "__main__":
+    main()
